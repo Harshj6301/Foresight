@@ -34,9 +34,9 @@ def main():
     interval_input = st.text_input("Enter interval")
 
     st.subheader('Provide Start Date')
-    Year_s, Month_s, day_s = get_date_input(label='Start Date', key='start')
+    Year_s, Month_s, day_s = get_date_input(label='Start Date')
     st.subheader('Provide End Date')
-    Year_e, Month_e, day_e = get_date_input(label='End Date', key='end')
+    Year_e, Month_e, day_e = get_date_input(label='End Date')
 
     start_date_input = datetime.date(int(Year_s), int(Month_s), int(day_s))
     end_date_input = datetime.date(int(Year_e), int(Month_e), int(day_e))
