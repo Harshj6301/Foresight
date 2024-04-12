@@ -71,7 +71,7 @@ def main():
         data = download(ticker_name_input, start_date_input, end_date_input, interval_options)
         st.write(data)
         # Plotly chart
-        fig = px.line(data, x='Datetime', y='Close')
+        fig = px.line(data, x='Date', y='Close')
         st.plotly_chart(fig)
 
 if __name__ == "__main__":
