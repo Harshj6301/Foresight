@@ -66,7 +66,7 @@ def main():
     # Add your download and plot functions here
     if st.button("Run"):
         data = download(ticker_name_input, start_date_input, end_date_input, interval_input)
-        st.write(data.head())
+        st.write(data)
         plot('Datetime','Close',data)
 
 if __name__ == "__main__":
