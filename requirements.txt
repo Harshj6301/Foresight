@@ -2,3 +2,4 @@ streamlit
 matplotlib
 yfinance
 plotly
+datetime
