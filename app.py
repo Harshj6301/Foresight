@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import datetime
 import plotly.express as px
 import matplotlib.pyplot as plt
 import yfinance as yf
@@ -52,11 +53,14 @@ def main():
 
     ticker_name_input = st.text_input("Enter Ticker symbol")
     interval_input = st.text_input("Enter interval")
-
-    st.subheader('Provide Start Date')
-    Year_s, Month_s, day_s = get_date_input_s(label='Start Date')
-    st.subheader('Provide End Date')
-    Year_e, Month_e, day_e = get_date_input_e(label='End Date')
+    
+    col1,col2 = stcolumns(2):
+    with col1:
+        st.subheader('Provide Start Date')
+        Year_s, Month_s, day_s = get_date_input_s(label='Start Date')
+    with col2:
+        st.subheader('Provide End Date')
+        Year_e, Month_e, day_e = get_date_input_e(label='End Date')
 
     start_date_input = datetime.date(int(Year_s), int(Month_s), int(day_s))
     end_date_input = datetime.date(int(Year_e), int(Month_e), int(day_e))
