@@ -8,6 +8,7 @@ import yfinance as yf
 # Function to download data from yfinance
 def download(ticker_symbol,start_date, end_date, interval='1m'):
     data = yf.download(ticker_symbol, interval = interval, start = start_date, end = end_date)
+    data = data.reset_index()
    # print(data.info())
     return data
   
