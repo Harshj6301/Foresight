@@ -30,8 +30,17 @@ def main():
     
     # Add your logo/image
     logo = 'Assets/Logos/DecisionDeltaLogobyDesigner (1).png'
-    st.image(logo, width=200, style='display: block; margin:auto;')
-
+    st.image(logo, width=200,)
+    ###########
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.write(' ')
+    with col2:
+        st.image(logo,width=250)
+    with col3:
+        st.write(' ')
+    
+    #########
     st.subheader('Provide Data')
 
     ticker_name_input = st.text_input("Enter Ticker symbol")
