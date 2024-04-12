@@ -54,7 +54,7 @@ def main():
     ticker_name_input = st.text_input("Enter Ticker symbol")
     interval_input = st.text_input("Enter interval")
     
-    col1,col2 = stcolumns(2):
+    col1,col2 = stcolumns(2)
     with col1:
         st.subheader('Provide Start Date')
         Year_s, Month_s, day_s = get_date_input_s(label='Start Date')
