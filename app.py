@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 
 # Function to download data from yfinance
+@st.cache
 def download(ticker_symbol,start_date, end_date, interval='1m'):
     data = yf.download(ticker_symbol, interval = interval, start = start_date, end = end_date)
     data = data.reset_index()
@@ -13,6 +14,7 @@ def download(ticker_symbol,start_date, end_date, interval='1m'):
     return data
   
 # Function for date start input
+@st.cache
 def get_date_input_s(label):
     year = st.number_input(label='Year', min_value=2000, max_value=2100, key='year_s')
     month = st.number_input(label='Month', min_value=1, max_value=12, key='month_s')
@@ -71,7 +73,7 @@ def main():
         data = download(ticker_name_input, start_date_input, end_date_input, interval_options)
         st.write(data)
         # Plotly chart
-        fig = px.line(data, x='Date', y='Close')
+        fig = px.line(data, x='Datetime', y='Close')
         st.plotly_chart(fig)
 
 if __name__ == "__main__":
