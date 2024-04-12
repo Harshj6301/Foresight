@@ -26,7 +26,11 @@ def plot(var1, var2, data):
 
 # Main function
 def main():
-    st.title('Options Trading Dashboard')
+    st.title('Decision Delta')
+    
+    # Add your logo/image
+    logo = 'Assets/Logos/DecisionDeltaLogobyDesigner (1).png'
+    st.image(logo, caption='Decision Delta', use_column_width=True)
 
     st.subheader('Provide Data')
 
