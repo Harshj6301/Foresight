@@ -10,12 +10,19 @@ def download(ticker_symbol,start_date, end_date, interval='1m'):
     print(data.info())
     return data
   
-# Function for date input
-def get_date_input(label):
+# Function for date start input
+def get_date_input_s(label):
+    year = st.number_input(label='Year', min_value=2000, max_value=2100, key='year_s')
+    month = st.number_input(label='Month', min_value=1, max_value=12, key='month_s')
+    day = st.number_input(label='Day', min_value=1, max_value=31, key='day_s')
+    return year, month, day
+# Function for date end input
+def get_date_input_e(label):
     year = st.number_input(label='Year', min_value=2000, max_value=2100, key='year')
     month = st.number_input(label='Month', min_value=1, max_value=12, key='month')
     day = st.number_input(label='Day', min_value=1, max_value=31, key='day')
     return year, month, day
+
 
 # Function to plot features x by y
 def plot(var1, var2, data):    
@@ -47,9 +54,9 @@ def main():
     interval_input = st.text_input("Enter interval")
 
     st.subheader('Provide Start Date')
-    Year_s, Month_s, day_s = get_date_input(label='Start Date')
+    Year_s, Month_s, day_s = get_date_input_s(label='Start Date')
     st.subheader('Provide End Date')
-    Year_e, Month_e, day_e = get_date_input(label='End Date')
+    Year_e, Month_e, day_e = get_date_input_e(label='End Date')
 
     start_date_input = datetime.date(int(Year_s), int(Month_s), int(day_s))
     end_date_input = datetime.date(int(Year_e), int(Month_e), int(day_e))
