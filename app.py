@@ -30,7 +30,7 @@ def main():
     
     # Add your logo/image
     logo = 'Assets/Logos/DecisionDeltaLogobyDesigner (1).png'
-    st.image(logo, caption='Decision Delta', width=200)
+    st.image(logo, width=200, style='display: block; margin:auto;')
 
     st.subheader('Provide Data')
 
