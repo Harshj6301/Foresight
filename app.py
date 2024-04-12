@@ -50,7 +50,9 @@ def main():
     st.subheader('Provide Data')
 
     ticker_name_input = st.text_input("Enter Ticker symbol")
-    interval_input = st.text_input("Enter interval")
+    #interval_input = st.text_input("Enter interval")
+    interval_options = sr.selectbox("Enter interval",
+                                    ('1m','5m','15m','1h','1d','1wk'))
     
     col1,col2 = st.columns(2)
     with col1:
