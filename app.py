@@ -14,7 +14,6 @@ def download(ticker_symbol,start_date, end_date, interval='1m'):
     return data
   
 # Function for date start input
-@st.cache_data
 def get_date_input_s(label):
     year = st.number_input(label='Year', min_value=2000, max_value=2100, key='year_s')
     month = st.number_input(label='Month', min_value=1, max_value=12, key='month_s')
