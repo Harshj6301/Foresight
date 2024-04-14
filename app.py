@@ -35,7 +35,7 @@ def plot(var1, var2, data):
 # Main function
 def main():
     # Add your logo/image
-    logo = 'Assets/Logos/DecisionDeltaLogobyDesigner (1).png'
+    logo = 'Assets/Logos/DecisionDeltaLogobyDesigner.jpeg'
     st.markdown("""
     <style>.logo {text-align: center; display: flex;
     justify-content: center;
