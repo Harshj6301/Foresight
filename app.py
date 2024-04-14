@@ -98,7 +98,7 @@ def main():
 
     # Add your download and plot functions here
     if st.button("Run"):
-        data = download(selected, start_date_input, end_date_input, interval_options)
+        global data = download(selected, start_date_input, end_date_input, interval_options)
         st.write(data)
         data_features = data.columns
         col1, col2 = st.columns(2)
