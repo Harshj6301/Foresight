@@ -31,8 +31,7 @@ def get_date_input_e(label):
 
 # Function to plot features x by y
 def plot(var1, var2, data):    
-    plt.figure(figsize=(12,5))
-    plt.plot(data[var1],data[var2], color='blue', alpha=0.7)
+    st.line_plot(data, var1, var2)
 
 # Main function
 def main():
@@ -108,7 +107,7 @@ def main():
         with col2:
             feature_2 = st.selectbox("Select Y", data_features)
         # line chart
-        st.line_chart(data, x=feature_1, y=feature_2)
+        plot(data, feature_1, feature_2)
         
         # Plotly chart
         #fig = px.line(data, x='Datetime', y='Close')
