@@ -48,7 +48,7 @@ def main():
 </style>
 
 <div class="logo">
-  <img src="logo" alt="Logo" style="width: 200px;">  <h1>Decision Delta</h1>
+  <img src="Assets/Logos/DecisionDeltaLogobyDesigner (1).png" alt="Logo" style="width: 200px;">  <h1>Decision Delta</h1>
 </div>
 """, unsafe_allow_html=True)
     
