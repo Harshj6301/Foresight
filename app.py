@@ -18,12 +18,12 @@ def download(ticker_symbol,start_date, end_date, interval='1m'):
 # Function for date start input
 def get_date_input_s(label):
     year = st.number_input(label='Year', min_value=2000, max_value=2100,value=2024, key='year_s')
-    month = st.number_input(label='Month', min_value=1, max_value=12,value=2024, key='month_s')
+    month = st.number_input(label='Month', min_value=1, max_value=12, key='month_s')
     day = st.number_input(label='Day', min_value=1, max_value=31, key='day_s')
     return year, month, day
 # Function for date end input
 def get_date_input_e(label):
-    year = st.number_input(label='Year', min_value=2000, max_value=2100, key='year')
+    year = st.number_input(label='Year', min_value=2000, max_value=2100,value=2024, key='year')
     month = st.number_input(label='Month', min_value=1, max_value=12, key='month')
     day = st.number_input(label='Day', min_value=1, max_value=31, key='day')
     return year, month, day
