@@ -34,7 +34,7 @@ def plot(var1, var2, data):
 
 # Main function
 def main():
-    st.title('Decision Delta')
+    st.title('Decision Delta', align = 'center')
     
     # Add your logo/image
     logo = 'Assets/Logos/DecisionDeltaLogobyDesigner (1).png'
