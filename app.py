@@ -34,9 +34,6 @@ def plot(var1, var2, data):
 
 # Main function
 def main():
-    st.title('Decision Delta')
-    st.subheader('Making decisions with precision and agility, for options trading', divider='rainbow')
-    
     # Add your logo/image
     logo = 'Assets/Logos/DecisionDeltaLogobyDesigner (1).png'
     #st.image(logo, width=200,)
@@ -48,6 +45,11 @@ def main():
         st.image(logo,width=250)
     with col3:
         st.write(' ')
+        
+    st.title('Decision Delta')
+    st.subheader('Making decisions with precision and agility, for options trading', divider='rainbow')
+    
+  
     
     #########
     st.subheader('Provide Data')
