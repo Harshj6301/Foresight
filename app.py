@@ -97,7 +97,7 @@ def main():
     end_date_input = datetime.date(int(Year_e), int(Month_e), int(day_e))
 
     # Add your download and plot functions here
-    if st.button("Run"):
+    if st.button("Execute"):
         data = download(selected, start_date_input, end_date_input, interval_options)
         st.write(data)
         data_features = data.columns
@@ -108,8 +108,9 @@ def main():
             feature_2 = st.selectbox("Select Y", data_features)
         
         # line chart
-    if st.button("Plot"):
-        st.line_chart(data, x = feature_1, y = feature_2)
+    if "data" in locals():
+        if st.button("Plot"):
+            st.line_chart(data, x=feature_1, y=feature_2)
         # Plotly chart
         #fig = px.line(data, x='Datetime', y='Close')
         #st.plotly_chart(fig)
