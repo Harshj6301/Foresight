@@ -42,6 +42,51 @@ def main():
 
     #########
     st.subheader('Provide Data')
+    # Using selectbox or autocomplete thing for input
+    import streamlit as st
+    
+    # Function to fetch symbols from the URL
+    def fetch_symbols(url):
+        symbols = []
+    
+        # Fetch HTML content from the URL
+        response = requests.get(url)
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Find all rows containing symbols
+            rows = soup.find_all('tr')
+    
+            # Extract symbols from each row
+            for row in rows:
+                symbol_td = row.find('td', class_='TAL')
+                if symbol_td:
+                    symbol_link = symbol_td.find('a')
+                    if symbol_link:
+                        symbol = symbol_link.text.strip()
+                        symbols.append(symbol)
+    
+        return symbols
+    
+    # URL of the webpage containing F&O symbols
+    url = 'https://www.moneycontrol.com/stocks/fno/marketstats/futures/most_active/homebody.php?opttopic=&optinst=allfut&sel_mth=all&sort_order=0'
+    
+    # Fetch symbols from the URL and remove duplicates
+    fno_symbols = list(set(fetch_symbols(url)))
+    
+    # Streamlit app
+    st.title('Symbol Selection')
+    
+    # Dropdown to select symbol
+    selected_symbol = st.selectbox('Select Symbol', fno_symbols)
+    
+    # Text input with auto-complete for symbol selection
+    symbol_input = st.text_input('Enter Symbol Name', value='', autocomplete=fno_symbols)
+    
+    st.write('Selected Symbol:', selected_symbol)
+    st.write('Symbol Input:', symbol_input)
+
+   ####################### 
 
     ticker_name_input = st.text_input("Enter Ticker symbol")
     #interval_input = st.text_input("Enter interval")
