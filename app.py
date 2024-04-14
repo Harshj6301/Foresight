@@ -34,6 +34,39 @@ def plot(var1, var2, data):
 
 # Main function
 def main():
+
+    # Define the layout using HTML and CSS
+    header_html = """
+    <style>
+        .header-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            width: 200px; /* Adjust the width as needed */
+        }
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+    <div class="header-container">
+        <img class="logo" src="path_to_your_logo.png" alt="Logo">
+        <h1 class="title">Your Title</h1>
+        <p class="subtitle">Your Subtitle</p>
+    </div>
+    """
+
+    # Display the header using st.markdown with unsafe_allow_html=True
+    st.markdown(header_html, unsafe_allow_html=True)
+
+    
     # Add your logo/image
     logo = 'DecisionDeltaLogobyDesigner.jpeg'
     st.markdown("""
