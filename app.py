@@ -97,7 +97,7 @@ def main():
 
     data = download(selected, start_date_input, end_date_input, interval_options)
     # Add your download and plot functions here
-    if st.button("Execute"):
+    if st.chechbox("Show data"):
         st.write(data)
     col_1, col_2 = st.columns(2)
     with col_1:
