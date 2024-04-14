@@ -73,17 +73,14 @@ def main():
     # Fetch symbols from the URL and remove duplicates
     fno_symbols = list(set(fetch_symbols(url)))
     
-    # Streamlit app
-    st.title('Symbol Selection')
-    
     # Dropdown to select symbol
-    selected_symbol = st.selectbox('Select Symbol', fno_symbols)
-    
-    st.write('Selected Symbol:', selected_symbol)
+    selected_symbol = st.selectbox('Select Ticker', fno_symbols)
+    selected = selected_symbol+'.NS'
+    st.write('Selected Ticker:', selected_symbol)
 
    ####################### 
 
-    ticker_name_input = st.text_input("Enter Ticker symbol")
+  #  ticker_name_input = st.text_input("Enter Ticker symbol")
     #interval_input = st.text_input("Enter interval")
     interval_options = st.selectbox("Enter interval",
                                     ('1m','5m','15m','1h','1d','1wk'))
@@ -101,7 +98,7 @@ def main():
 
     # Add your download and plot functions here
     if st.button("Run"):
-        data = download(ticker_name_input, start_date_input, end_date_input, interval_options)
+        data = download(selected, start_date_input, end_date_input, interval_options)
         st.write(data)
         # Plotly chart
         fig = px.line(data, x='Datetime', y='Close')
