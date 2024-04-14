@@ -101,14 +101,15 @@ def main():
         data = download(selected, start_date_input, end_date_input, interval_options)
         st.write(data)
         data_features = data.columns
+        
         col1, col2 = st.columns(2)
         with col1:
             feature_1 = st.selectbox("Select X", data_features)
         with col2:
             feature_2 = st.selectbox("Select Y", data_features)
-        
         # line chart
-    st.line_chart(data, x=feature_1, y=feature_2)
+        st.line_chart(data, x=feature_1, y=feature_2)
+        
         # Plotly chart
         #fig = px.line(data, x='Datetime', y='Close')
         #st.plotly_chart(fig)
