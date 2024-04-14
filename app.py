@@ -79,11 +79,7 @@ def main():
     # Dropdown to select symbol
     selected_symbol = st.selectbox('Select Symbol', fno_symbols)
     
-    # Text input with auto-complete for symbol selection
-    symbol_input = st.text_input('Enter Symbol Name', value='', autocomplete=fno_symbols)
-    
     st.write('Selected Symbol:', selected_symbol)
-    st.write('Symbol Input:', symbol_input)
 
    ####################### 
 
