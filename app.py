@@ -36,6 +36,12 @@ def plot(var1, var2, data):
 def main():
     # Add your logo/image
     logo = 'Assets/Logos/DecisionDeltaLogobyDesigner (1).png'
+    st.markdown("""
+    <div style="text-align: center">
+    <img src=logo alt="Logo" style="width: 200px;">  <h1>Decision Delta</h1>
+    </div> """)
+    
+   
     #st.image(logo, width=200,)
     ###########
     col1, col2, col3 = st.columns(3)
