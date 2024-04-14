@@ -34,16 +34,13 @@ def plot(var1, var2, data):
 
 # Main function
 def main():
-
+    st.image(logo,width=150)
     # Define the layout using HTML and CSS
     header_html = """
     <style>
         .header-container {
             text-align: center;
-            margin-bottom: 30px;
-        }
-        .logo {
-            width: 200px; /* Adjust the width as needed */
+            margin-bottom: 10px;
         }
         .title {
             font-size: 32px;
@@ -57,7 +54,6 @@ def main():
         }
     </style>
     <div class="header-container">
-        <img class="logo" src="DecisionDeltaLogobyDesigner.jpeg" alt="Logo">
         <h1 class="title">Decision Delta</h1>
         <p class="subtitle">Making decisions with precision and agility, for options trading</p>
     </div>
