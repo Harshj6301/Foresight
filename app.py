@@ -100,7 +100,7 @@ def main():
     if st.button("Execute"):
         st.write(data)
         col_1, col_2 = st.columns(2)
-        with col1_1:
+        with col_1:
             x_feature = st.selectbox("Select X Feature", data.columns, index=0)
         with col_2:
             y_feature = st.selectbox("Select Y Feature", data.columns, index=1)
