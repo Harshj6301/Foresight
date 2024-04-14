@@ -31,7 +31,7 @@ def get_date_input_e(label):
 
 # Function to plot features x by y
 def plot(var1, var2, data):    
-    st.line_plot(data, var1, var2)
+    st.line_chart(data, var1, var2)
 
 # Main function
 def main():
