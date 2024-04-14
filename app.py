@@ -105,15 +105,10 @@ def main():
     with col_2:
         y_feature = st.selectbox("Select Y Feature", data.columns, index=1)
         
-        # line chart
-    st.line_chart(data, x=x_feature, y=y_feature, title=f'{y_feature} vs {x_feature}')
- #   fig = px.line(data, x=x_feature, y=y_feature, title=f'{y_feature} vs {x_feature}')
-  #  st.plotly_chart(fig)
-        
-        # Plotly chart
-        #fig = px.line(data, x='Datetime', y='Close')
-        #st.plotly_chart(fig)
-
+   # line chart
+   fig = px.line(data, x=x_feature, y=y_feature, title=f'{y_feature} vs {x_feature}')
+   st.plotly_chart(fig)
+    
 if __name__ == "__main__":
     main()
 
