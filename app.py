@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import requests
+from bs4 import BeautifulSoup
 import datetime
 import plotly.express as px
 import matplotlib.pyplot as plt
@@ -43,12 +45,9 @@ def main():
     #########
     st.subheader('Provide Data')
     # Using selectbox or autocomplete thing for input
-    import streamlit as st
-    
     # Function to fetch symbols from the URL
     def fetch_symbols(url):
         symbols = []
-    
         # Fetch HTML content from the URL
         response = requests.get(url)
         if response.status_code == 200:
