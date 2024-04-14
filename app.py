@@ -35,7 +35,7 @@ def plot(var1, var2, data):
 # Main function
 def main():
     # Add your logo/image
-    logo = 'Assets/Logos/DecisionDeltaLogobyDesigner.jpeg'
+    logo = 'DecisionDeltaLogobyDesigner.jpeg'
     st.markdown("""
     <style>.logo {text-align: center; display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@ def main():
     height: 100px;  /* Adjust height as needed */} </style>
       
     <div class="logo">
-    <img src="Assets/Logos/DecisionDeltaLogobyDesigner (1).png" alt="Logo" style="width: 200px;">  <h1>Decision Delta</h1>
+    <img src="DecisionDeltaLogobyDesigner.jpeg" alt="Logo" style="width: 200px;">  <h1>Decision Delta</h1>
     </div>""", unsafe_allow_html=True)
     
    
