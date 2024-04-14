@@ -34,6 +34,9 @@ def plot(var1, var2, data):
 
 # Main function
 def main():
+    # Add your logo/image
+    logo = 'DecisionDeltaLogobyDesigner.jpeg'   
+    
     st.image(logo,width=150)
     # Define the layout using HTML and CSS
     header_html = """
@@ -63,8 +66,7 @@ def main():
     st.markdown(header_html, unsafe_allow_html=True)
 
     
-    # Add your logo/image
-    logo = 'DecisionDeltaLogobyDesigner.jpeg'   
+   
    
     #st.image(logo, width=200,)
     ###########
