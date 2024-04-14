@@ -108,9 +108,7 @@ def main():
             feature_2 = st.selectbox("Select Y", data_features)
         
         # line chart
-    if "data" in locals():
-        if st.button("Plot"):
-            st.line_chart(data, x=feature_1, y=feature_2)
+        st.line_chart(data, x=feature_1, y=feature_2)
         # Plotly chart
         #fig = px.line(data, x='Datetime', y='Close')
         #st.plotly_chart(fig)
