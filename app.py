@@ -57,9 +57,9 @@ def main():
         }
     </style>
     <div class="header-container">
-        <img class="logo" src="path_to_your_logo.png" alt="Logo">
-        <h1 class="title">Your Title</h1>
-        <p class="subtitle">Your Subtitle</p>
+        <img class="logo" src="DecisionDeltaLogobyDesigner.jpeg" alt="Logo">
+        <h1 class="title">Decision Delta</h1>
+        <p class="subtitle">Making decisions with precision and agility, for options trading</p>
     </div>
     """
 
