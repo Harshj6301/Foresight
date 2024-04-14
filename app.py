@@ -68,17 +68,7 @@ def main():
 
     
     # Add your logo/image
-    logo = 'DecisionDeltaLogobyDesigner.jpeg'
-    st.markdown("""
-    <style>.logo {text-align: center; display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;  /* Adjust height as needed */} </style>
-      
-    <div class="logo">
-    <img src="DecisionDeltaLogobyDesigner.jpeg" alt="Logo" style="width: 200px;">  <h1>Decision Delta</h1>
-    </div>""", unsafe_allow_html=True)
-    
+    logo = 'DecisionDeltaLogobyDesigner.jpeg'   
    
     #st.image(logo, width=200,)
     ###########
@@ -91,7 +81,7 @@ def main():
     #    st.write(' ')
         
    # st.title('Decision Delta')
-    st.subheader('Making decisions with precision and agility, for options trading', divider='rainbow')
+    st.subheader('', divider='rainbow')
 
     #########
     st.subheader('Provide Data')
