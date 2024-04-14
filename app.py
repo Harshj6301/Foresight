@@ -37,7 +37,14 @@ def main():
     # Add your logo/image
     logo = 'DecisionDeltaLogobyDesigner.jpeg'   
     
-    st.image(logo,width=150)
+    
+    # Define a container with center-aligned CSS
+    image_container = st.container()
+    image_container.markdown(
+        f'<div style="display: flex; justify-content: center;">'
+        f'<img src="{logo}" style="width: 200px;">'  # Adjust the width as needed
+        f'</div>', 
+        unsafe_allow_html=True)
     # Define the layout using HTML and CSS
     header_html = """
     <style>
