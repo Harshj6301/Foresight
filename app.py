@@ -99,12 +99,16 @@ def main():
     # Add your download and plot functions here
     if st.button("Execute"):
         st.write(data)
+
+        x_feature = st.selectbox("Select X Feature", data.columns, index=0)
+        y_feature = st.selectbox("Select Y Feature", data.columns, index=1)
+        """
         data_features = data.columns
         col1, col2 = st.columns(2)
         with col1:
             feature_1 = st.selectbox("Select X", data_features)
         with col2:
-            feature_2 = st.selectbox("Select Y", data_features)
+            feature_2 = st.selectbox("Select Y", data_features)"""
         # line chart
         plot(data, feature_1[0], feature_2[1])
         
