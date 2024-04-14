@@ -110,7 +110,8 @@ def main():
         with col2:
             feature_2 = st.selectbox("Select Y", data_features)"""
         # line chart
-        plot(data, x_feature, y_feature)
+        fig = px.line(data, x=x_feature, y=y_feature, title=f'{y_feature} vs {x_feature}')
+        st.plotly_chart(fig)
         
         # Plotly chart
         #fig = px.line(data, x='Datetime', y='Close')
