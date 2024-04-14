@@ -36,57 +36,9 @@ def plot(var1, var2, data):
 def main():
     # Add your logo/image
     logo = 'DecisionDeltaLogobyDesigner.jpeg'   
-    
-    
-    # Define a container with center-aligned CSS
-    image_container = st.container()
-    image_container.markdown(
-        f'<div style="display: flex; justify-content: center;">'
-        f'<img src="{logo}" style="width: 200px;">'  # Adjust the width as needed
-        f'</div>', 
-        unsafe_allow_html=True)
-    # Define the layout using HTML and CSS
-    header_html = """
-    <style>
-        .header-container {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .title {
-            font-size: 32px;
-            font-weight: bold;
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
-        .subtitle {
-            font-size: 18px;
-            color: #666;
-        }
-    </style>
-    <div class="header-container">
-        <h1 class="title">Decision Delta</h1>
-        <p class="subtitle">Making decisions with precision and agility, for options trading</p>
-    </div>
-    """
-
-    # Display the header using st.markdown with unsafe_allow_html=True
-    st.markdown(header_html, unsafe_allow_html=True)
-
-    
-   
-   
-    #st.image(logo, width=200,)
-    ###########
-    #col1, col2, col3 = st.columns(3)
-    #with col1:
-    #    st.write(' ')
-    #with col2:
-    #    st.image(logo,width=250)
-    #with col3:
-    #    st.write(' ')
-        
-   # st.title('Decision Delta')
-    st.subheader('', divider='rainbow')
+    st.image(logo, width = 200)
+    st.title('Decision Delta')
+    st.subheader('Making decisions with precision and agility, for options trading', divider='rainbow')
 
     #########
     st.subheader('Provide Data')
