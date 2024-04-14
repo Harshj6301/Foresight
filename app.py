@@ -95,12 +95,11 @@ def main():
     start_date_input = datetime.date(int(Year_s), int(Month_s), int(day_s))
     end_date_input = datetime.date(int(Year_e), int(Month_e), int(day_e))
 
+    data = download(selected, start_date_input, end_date_input, interval_options)
     # Add your download and plot functions here
     if st.button("Execute"):
-        data = download(selected, start_date_input, end_date_input, interval_options)
         st.write(data)
         data_features = data.columns
-        
         col1, col2 = st.columns(2)
         with col1:
             feature_1 = st.selectbox("Select X", data_features)
