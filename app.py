@@ -36,21 +36,34 @@ def plot(var1, var2, data):
 def main():
     # Add your logo/image
     logo = 'Assets/Logos/DecisionDeltaLogobyDesigner (1).png'
-    st.markdown("""<div style="text-align: center"><img src='Assets/Logos/DecisionDeltaLogobyDesigner (1).png' alt="Logo" style="width: 200px;">  
-    <h1>Decision Delta</h1></div> """, unsafe_allow_html=True)
+    st.markdown("""
+<style>
+.logo {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;  /* Adjust height as needed */
+}
+</style>
+
+<div class="logo">
+  <img src="logo" alt="Logo" style="width: 200px;">  <h1>Decision Delta</h1>
+</div>
+""", unsafe_allow_html=True)
     
    
     #st.image(logo, width=200,)
     ###########
-    col1, col2, col3 = st.columns(3)
+  """  col1, col2, col3 = st.columns(3)
     with col1:
         st.write(' ')
     with col2:
         st.image(logo,width=250)
     with col3:
         st.write(' ')
-        
-    st.title('Decision Delta')
+        """
+   # st.title('Decision Delta')
     st.subheader('Making decisions with precision and agility, for options trading', divider='rainbow')
     
   
