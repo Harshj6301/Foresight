@@ -1,5 +1,5 @@
 # Decision-Delta
-<img src="Assets/Logos/DecisionDeltaLogobyDesigner (1).png" width="200" height="200" />
+<img src="Assets/Logos/New logo.png" width="100" height="100" />
 
  <a href = "https://decision-delta.streamlit.app"> Try here </a>
 ### Making decisions with precision and agility, in options trading
