@@ -1,4 +1,4 @@
-# Decision-Delta
+# Foresight
 <img src="Assets/Logos/bull.jpeg" width="200" height="200" />
 
  <a href = "https://decision-delta.streamlit.app"> Try here </a>
