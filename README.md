@@ -18,6 +18,6 @@
 
   *Note: under development*
 ---
- <a href = "https://decision-delta.streamlit.app"> Try here </a>
+ <a href = "https://harshj6301.github.io/Foresight-website/"> Try here </a>
 ## Workflow
 <img src="Assets/Decision Delta.png"/>
