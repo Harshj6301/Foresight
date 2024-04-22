@@ -40,7 +40,7 @@ def main():
     name = "Assets/Name/Foresight.png"
     st.image(logo, width = 50)
     st.image(name, height = 50)
-    st.title('Decision Delta')
+    st.title('Foresight')
     st.subheader('Making decisions with precision and agility, for options trading', divider='rainbow')
 
     #########
