@@ -38,6 +38,7 @@ def main():
     # Add your logo/image
     logo = "Assets/Logos/bullai.png"
     name = "Assets/Name/Foresight.png"
+    st.image([logo,name])
     st.image(logo, width = 50)
     st.image(name)
     st.title('Foresight')
