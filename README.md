@@ -1,6 +1,9 @@
 <img src="Assets/Logos/bullai.png" width="50" height="50" /> <img src="Assets/Name/Foresight.png" height="50"/>
+### By
+<img src="Assets/Name/Endurance.png" width = '200'/>
 
 ---
+
 ### Making decisions with precision and agility, in options trading
 #### Features
 * EDA
