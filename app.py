@@ -38,7 +38,7 @@ def main():
     # Add your logo/image
     logo = "Assets/Logos/bullai.png"
     name = "Assets/Name/Foresight.png"
-    st.image([logo(width=50),name])
+    st.image(name)
    # st.title('Foresight')
     st.subheader('Making decisions with precision and agility, for options trading', divider='rainbow')
 
