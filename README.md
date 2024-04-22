@@ -1,7 +1,6 @@
-# Foresight
-<img src="Assets/Logos/bullai.png" width="200" height="200" />
+<img src="Assets/Logos/bullai.png" width="50" height="50" /> <img src="Assets/Name/Foresight.png" height="50"/>
 
- <a href = "https://decision-delta.streamlit.app"> Try here </a>
+---
 ### Making decisions with precision and agility, in options trading
 #### Features
 * EDA
@@ -19,6 +18,6 @@
 
   *Note: under development*
 ---
-
+ <a href = "https://decision-delta.streamlit.app"> Try here </a>
 ## Workflow
 <img src="Assets/Decision Delta.png"/>
