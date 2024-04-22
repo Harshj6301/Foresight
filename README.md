@@ -1,5 +1,5 @@
 # Foresight
-<img src="Assets/Logos/bull.jpeg" width="200" height="200" />
+<img src="Assets/Logos/bullai.png" width="200" height="200" />
 
  <a href = "https://decision-delta.streamlit.app"> Try here </a>
 ### Making decisions with precision and agility, in options trading
