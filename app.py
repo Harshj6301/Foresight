@@ -75,11 +75,17 @@ def main():
     fno_symbols = list(set(fetch_symbols(url)))
     
     # Dropdown to select symbol
-    selected_symbol = st.selectbox('Select Ticker', fno_symbols)
-    selected = selected_symbol+'.NS'
-    st.write('Selected Ticker:', selected_symbol)
+    #selected_symbol = st.selectbox('Select Ticker', fno_symbols)
+    #selected = selected_symbol+'.NS'
+    #st.write('Selected Ticker:', selected_symbol)
 
-   ####################### 
+    selected_symbol = st.multiselect('Select or Enter Ticker', fno_symbols, [])
+
+    # Use the first selected symbol if available, otherwise use custom symbol
+    selected = selected_symbol[0] if selected_symbol else None
+
+    st.write('Selected Ticker:', selected)
+    ####################### 
 
   #  ticker_name_input = st.text_input("Enter Ticker symbol")
     #interval_input = st.text_input("Enter interval")
