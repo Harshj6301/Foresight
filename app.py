@@ -86,6 +86,7 @@ def main():
 
     # Use the selected symbol if available, otherwise use custom symbol
     selected = selected_symbol if selected_symbol else custom_symbol
+    selected = selected+'.NS'
     
     st.write('Selected Ticker:', selected)
     ####################### 
