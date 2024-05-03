@@ -75,20 +75,11 @@ def main():
     fno_symbols = list(set(fetch_symbols(url)))
     
     # Dropdown to select symbol
-    #selected_symbol = st.selectbox('Select Ticker', fno_symbols)
-    #selected = selected_symbol+'.NS'
-    #st.write('Selected Ticker:', selected_symbol)
+    selected_symbol = st.selectbox('Select Ticker', fno_symbols)
+    selected = selected_symbol+'.NS'
+    st.write('Selected Ticker:', selected_symbol)
 
     selected_symbol = st.selectbox('Select Ticker', fno_symbols)
-
-    # Input field for custom symbol
-    custom_symbol = st.text_input('Enter Custom Ticker')
-
-    # Use the selected symbol if available, otherwise use custom symbol
-    selected = selected_symbol if selected_symbol else custom_symbol
-    selected = selected+'.NS'
-    
-    st.write('Selected Ticker:', selected)
     ####################### 
 
   #  ticker_name_input = st.text_input("Enter Ticker symbol")
