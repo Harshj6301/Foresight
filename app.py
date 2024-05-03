@@ -79,11 +79,14 @@ def main():
     #selected = selected_symbol+'.NS'
     #st.write('Selected Ticker:', selected_symbol)
 
-    selected_symbol = st.multiselect('Select or Enter Ticker', fno_symbols, [])
+    selected_symbol = st.selectbox('Select Ticker', fno_symbols)
 
-    # Use the first selected symbol if available, otherwise use custom symbol
-    selected = selected_symbol[0] if selected_symbol else None
+    # Input field for custom symbol
+    custom_symbol = st.text_input('Enter Custom Ticker')
 
+    # Use the selected symbol if available, otherwise use custom symbol
+    selected = selected_symbol if selected_symbol else custom_symbol
+    
     st.write('Selected Ticker:', selected)
     ####################### 
 
