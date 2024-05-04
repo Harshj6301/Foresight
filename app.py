@@ -78,7 +78,7 @@ def main():
     url = 'https://www.moneycontrol.com/stocks/fno/marketstats/futures/most_active/homebody.php?opttopic=&optinst=allfut&sel_mth=all&sort_order=0'
     
     # Fetch symbols from the URL and remove duplicates
-    fno_symbols = list(set(fetch_symbols(url)))
+    fno_symbols = list(fetch_symbols(url))
     
     # Dropdown to select symbol
     selected_symbol = st.selectbox('Select Ticker', fno_symbols)
