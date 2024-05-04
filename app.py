@@ -83,7 +83,8 @@ def main():
     
     # Dropdown to select symbol
     selected_symbol = st.selectbox('Select Ticker', fno_symbols)
-    selected = selected_symbol+'.NS'
+    
+    selected = selected_symbol + '.NS'
     st.write('Selected Ticker:', selected_symbol)
     ####################### 
 
