@@ -84,7 +84,7 @@ def main():
     # Dropdown to select symbol
     selected_symbol = st.selectbox('Select Ticker', fno_symbols)
     
-    selected = selected_symbol + '.NS'
+   
     st.write('Selected Ticker:', selected_symbol)
     ####################### 
 
@@ -104,7 +104,7 @@ def main():
     start_date_input = datetime.date(int(Year_s), int(Month_s), int(day_s))
     end_date_input = datetime.date(int(Year_e), int(Month_e), int(day_e))
 
-    data = download(selected, start_date_input, end_date_input, interval_options)
+    data = download(selected+'.NS', start_date_input, end_date_input, interval_options)
     # Add your download and plot functions here
     if st.checkbox("Show full data"):
         st.write(data)
