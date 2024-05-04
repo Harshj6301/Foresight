@@ -79,7 +79,9 @@ def main():
     
     # Fetch symbols from the URL and remove duplicates
     fno_symbols = list(fetch_symbols(url))
-    
+
+    #test to check fnosymbol
+    st.write(fno_symbols)
     # Dropdown to select symbol
     selected_symbol = st.selectbox('Select Ticker', fno_symbols)
     
