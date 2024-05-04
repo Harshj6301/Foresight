@@ -85,8 +85,6 @@ def main():
     selected_symbol = st.selectbox('Select Ticker', fno_symbols)
     selected = selected_symbol+'.NS'
     st.write('Selected Ticker:', selected_symbol)
-
-    selected_symbol = st.selectbox('Select Ticker', fno_symbols)
     ####################### 
 
   #  ticker_name_input = st.text_input("Enter Ticker symbol")
@@ -111,15 +109,21 @@ def main():
         st.write(data)
     else:
         st.write(data.head())
+        
     col_1, col_2 = st.columns(2)
     with col_1:
         x_feature = st.selectbox("Select X Feature", data.columns, index=0)
     with col_2:
         y_feature = st.selectbox("Select Y Feature", data.columns, index=1)
    # line chart
-    fig = px.line(data, x=x_feature, y=y_feature, title=f'{y_feature} vs {x_feature}')
-    st.plotly_chart(fig)
-    
+    col_1, col_2 = st.columns(2)
+    with col_1:
+        fig = px.line(data, x=x_feature, y=y_feature, title=f'{y_feature} vs {x_feature}')
+        st.plotly_chart(fig)
+    with col_2:
+         fig = px.line(data, x=x_feature, y=y_feature, title=f'{y_feature} vs {x_feature}')
+         st.plotly_chart(fig)
+        
 if __name__ == "__main__":
     main()
 
