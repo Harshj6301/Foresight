@@ -40,21 +40,7 @@ def get_date_input_e(label):
 def plot(var1, var2, data):    
     st.line_chart(data, var1, var2)
 
-# Main function
-def main():
-    # Add your logo/image
-    logo = "Assets/Logos/bullai.png"
-    name = "Assets/Name/Foresight.png"
-    st.image(name, width=250)
-   # st.title('Foresight')
-    st.subheader('')
-    st.subheader('Gain the data-driven insights you need to make precise and agile decisions', divider='rainbow')
-
-    #########
-    st.subheader('Provide Data')
-    # Using selectbox or autocomplete thing for input
-    # Function to fetch symbols from the URL
-    def fetch_symbols(url):
+def fetch_symbols(url):
         symbols = []
         # Fetch HTML content from the URL
         response = requests.get(url)
@@ -72,8 +58,21 @@ def main():
                     if symbol_link:
                         symbol = symbol_link.text.strip()
                         symbols.append(symbol)
-    
         return symbols
+
+# Main function
+def main():
+    # Add your logo/image
+    logo = "Assets/Logos/bullai.png"
+    name = "Assets/Name/Foresight.png"
+    st.image(name, width=250)
+   # st.title('Foresight')
+    st.subheader('')
+    st.subheader('Gain the data-driven insights you need to make precise and agile decisions', divider='rainbow')
+
+    #########
+    st.subheader('Provide Data')
+    # Using selectbox or autocomplete thing for input
     
     # URL of the webpage containing F&O symbols
     url = 'https://www.moneycontrol.com/stocks/fno/marketstats/futures/most_active/homebody.php?opttopic=&optinst=allfut&sel_mth=all&sort_order=0'
@@ -84,7 +83,6 @@ def main():
     # Dropdown to select symbol
     selected_symbol = st.selectbox('Select Ticker', fno_symbols)
     
-   
     st.write('Selected Ticker:', selected_symbol)
     ####################### 
 
