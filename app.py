@@ -104,7 +104,7 @@ def main():
     start_date_input = datetime.date(int(Year_s), int(Month_s), int(day_s))
     end_date_input = datetime.date(int(Year_e), int(Month_e), int(day_e))
 
-    data = download(selected+'.NS', start_date_input, end_date_input, interval_options)
+    data = download(selected_symbol+'.NS', start_date_input, end_date_input, interval_options)
     # Add your download and plot functions here
     if st.checkbox("Show full data"):
         st.write(data)
