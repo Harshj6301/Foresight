@@ -108,19 +108,23 @@ def main():
         st.write(data)
     else:
         st.write(data.head())
-        
-    col_1, col_2 = st.columns(2)
+    # plot feature selection
+    col_1, col_2, col_3, col_4 = st.columns(4)
     with col_1:
         x_feature = st.selectbox("Select X Feature", data.columns, index=0)
     with col_2:
         y_feature = st.selectbox("Select Y Feature", data.columns, index=1)
+    with col_3:
+        x1_feature = st.selectbox("Select X Feature", data.columns, index=0)
+    with col_4:
+        y1_feature = st.selectbox("Select Y Feature", data.columns, index=1)
    # line chart
     col_1, col_2 = st.columns(2)
     with col_1:
         fig = px.line(data, x=x_feature, y=y_feature, title=f'{y_feature} vs {x_feature}')
         st.plotly_chart(fig)
     with col_2:
-         fig = px.line(data, x=x_feature, y=y_feature, title=f'{y_feature} vs {x_feature}')
+         fig = px.line(data, x=x1_feature, y=y1_feature, title=f'{y1_feature} vs {x1_feature}')
          st.plotly_chart(fig)
         
 if __name__ == "__main__":
