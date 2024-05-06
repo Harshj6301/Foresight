@@ -7,12 +7,13 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import yfinance as yf
 
-
-if st.button("Home"):
-    st.switch_page("app.py")
-if st.button("Page 1"):
-    st.switch_page("pages/page_1.py")
-
+col1, col2 = st.columns(2)
+with col1:
+    if st.button("Home"):
+        st.switch_page("app.py")
+with col2:
+    if st.button("Page 1"):
+        st.switch_page("pages/page_1.py")
 
 # Function to download data from yfinance
 @st.cache_data
