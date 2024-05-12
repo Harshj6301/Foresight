@@ -6,6 +6,7 @@ import datetime
 import plotly.express as px
 import matplotlib.pyplot as plt
 import yfinance as yf
+from duckduckgo_search import DDGS
 
 
 # Function to download data from yfinance
@@ -53,6 +54,16 @@ def fetch_symbols(url):
                         symbol = symbol_link.text.strip()
                         symbols.append(symbol)
         return symbols
+
+# news from ddg
+def search(query, max_results):
+  ddg = DDGS()
+  result = ddg.news(query, max_results=max_results)
+  # stripping and processing data
+  final_result = []
+  for i in result:
+    final_result.append([i['title'], i['body'], i['source']])
+  return final_result
 
 # Main function
 def main():
@@ -118,10 +129,15 @@ def main():
 
     data = download(selected_symbol, start_date_input, end_date_input, interval_options)
     # Add your download and plot functions here
-    if st.checkbox("Show full data"):
-        st.write(data)
-    else:
-        st.write(data.head())
+    data_col, news_col = st.columns(2)
+    with data_col:
+        if st.checkbox("Show full data"):
+            st.write(data)
+        else:
+            st.write(data.head())
+    with news_col:
+        result = search(selected_symbol + exchange, max_results = 3)
+        st.write(result)
     # plot feature selection
     col_1, col_2, col_3, col_4 = st.columns(4)
     with col_1:
