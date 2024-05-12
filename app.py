@@ -138,11 +138,11 @@ def main():
     with news_col:
         result = search(selected_symbol +' '+ exchange, max_results = 3)
         
-        string_data = []
-        for sublist in result:
-            string_data.append('\n'.join(sublist))
-        for string in result:
-            st.markdown(string)
+        for headline, description, source in result:
+            st.subheader(headline)
+            st.write(description)
+            st.write(f"Source: {source}")
+            st.markdown("---"))
         
     # plot feature selection
     col_1, col_2, col_3, col_4 = st.columns(4)
