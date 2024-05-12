@@ -141,7 +141,7 @@ def main():
         for headline, description, source in result:
             st.subheader(headline)
             st.write(':blue-background'[description])
-            st.write(f"Source: {:rainbow[source]}")
+            st.write(f"Source: {source}")
         
     # plot feature selection
     col_1, col_2, col_3, col_4 = st.columns(4)
