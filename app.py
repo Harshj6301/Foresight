@@ -142,7 +142,7 @@ def main():
             st.subheader(headline)
             st.write(description)
             st.write(f"Source: {source}")
-            st.markdown("---"))
+            st.markdown("---")
         
     # plot feature selection
     col_1, col_2, col_3, col_4 = st.columns(4)
