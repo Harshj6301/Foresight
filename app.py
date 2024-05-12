@@ -79,8 +79,14 @@ def main():
     
     # Dropdown to select symbol
     selected_symbol = st.selectbox('Select Ticker', fno_symbols)
+    
+    # Other tickers
+    selected_symbol = st.text_input("Enter Ticker symbol (For other tickers)")
+    # Selected final ticker
+    st.write('Selected Ticker:', selected_symbol)
 
     if exchange == 'NSE':
+        selected_symbol = st.selectbox('Select Ticker', fno_symbols)
         selected_symbol = f"{selected_symbol}.NS"
     elif exchange == 'FWB':
         selected_symbol = f"{selected_symbol}.DE"
@@ -88,8 +94,8 @@ def main():
         selected_symbol = f"{selected_symbol}.T"
     elif exchange == 'HKG':
         selected_symbol = f"{selected_symbol}.HK"
+
     
-    st.write('Selected Ticker:', selected_symbol)
     ####################### 
 
   #  ticker_name_input = st.text_input("Enter Ticker symbol")
