@@ -141,7 +141,8 @@ def main():
         string_data = []
         for sublist in result:
             string_data.append('\n'.join(sublist))
-        st.write(string_data)
+        for string in results:
+            st.write(string)
         
     # plot feature selection
     col_1, col_2, col_3, col_4 = st.columns(4)
