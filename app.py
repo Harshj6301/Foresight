@@ -139,8 +139,8 @@ def main():
         result = search(selected_symbol +' '+ exchange, max_results = 3)
         
         for headline, description, source in result:
-            st.subheader(headline)
-            st.write(':blue-background'[description])
+            st.markdown(headline)
+            st.write(description)
             st.write(f"Source: {source}")
         
     # plot feature selection
