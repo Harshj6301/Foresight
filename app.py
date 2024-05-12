@@ -78,7 +78,7 @@ def main():
     exchange = st.selectbox('Select Exchange', ['NSE', 'FWB', 'NASDAQ', 'NYSE','JPX','LSE','SSE','HKG'], key='s1')
     
     # Dropdown to select symbol
-    selected_symbol = st.selectbox('Select Ticker', fno_symbols, key='s2')
+    # selected_symbol = st.selectbox('Select Ticker', fno_symbols, key='s2')
     
     # Other tickers
     selected_symbol = st.text_input("Enter Ticker symbol (For other tickers)")
