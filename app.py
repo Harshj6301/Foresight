@@ -75,15 +75,14 @@ def main():
     fno_symbols = list(fetch_symbols(url))
 
     # Select Exchange
-    exchange = st.selectbox('Select Exchange', ['NSE', 'FWB', 'NASDAQ', 'NYSE','JPX','LSE','SSE','HKG'], key='s1')
-    
+    #exchange = st.selectbox('Select Exchange', ['NSE', 'FWB', 'NASDAQ', 'NYSE','JPX','LSE','SSE','HKG'], key='s1')
+    exchange = st.radio('Select Exchange', [':flag-in: NSE', ':flag-de: FWB', ':flag-us: NASDAQ', ':flag-us: NYSE',':flag-jp: JPX',':uk: LSE',':flag-cn: SSE',':flag-cn: HKG'], 
+                        captions=['India', 'Germany', 'US' ,'US', 'Japan', 'London', 'China', 'China'], index=None, horizontal=True)
     # Dropdown to select symbol
     # selected_symbol = st.selectbox('Select Ticker', fno_symbols, key='s2')
     
     # Other tickers
     selected_symbol = st.text_input("Enter Ticker symbol (For other tickers)")
-    # Selected final ticker
-    st.write('Selected Ticker:', selected_symbol)
 
     if exchange == 'NSE':
         selected_symbol = st.selectbox('Select Ticker', fno_symbols, key='s3')
@@ -94,6 +93,9 @@ def main():
         selected_symbol = f"{selected_symbol}.T"
     elif exchange == 'HKG':
         selected_symbol = f"{selected_symbol}.HK"
+
+    # Selected final ticker
+    st.write('Selected Ticker:', selected_symbol)
 
     
     ####################### 
