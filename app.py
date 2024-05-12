@@ -75,10 +75,10 @@ def main():
     fno_symbols = list(fetch_symbols(url))
 
     # Select Exchange
-    exchange = st.selectbox('Select Exchange', ['NSE', 'FWB', 'NASDAQ', 'NYSE','JPX','LSE','SSE','HKG'])
+    exchange = st.selectbox('Select Exchange', ['NSE', 'FWB', 'NASDAQ', 'NYSE','JPX','LSE','SSE','HKG'], key='s1')
     
     # Dropdown to select symbol
-    selected_symbol = st.selectbox('Select Ticker', fno_symbols)
+    selected_symbol = st.selectbox('Select Ticker', fno_symbols, key='s2')
     
     # Other tickers
     selected_symbol = st.text_input("Enter Ticker symbol (For other tickers)")
@@ -86,7 +86,7 @@ def main():
     st.write('Selected Ticker:', selected_symbol)
 
     if exchange == 'NSE':
-        selected_symbol = st.selectbox('Select Ticker', fno_symbols)
+        selected_symbol = st.selectbox('Select Ticker', fno_symbols, key='s3')
         selected_symbol = f"{selected_symbol}.NS"
     elif exchange == 'FWB':
         selected_symbol = f"{selected_symbol}.DE"
