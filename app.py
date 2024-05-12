@@ -136,13 +136,13 @@ def main():
         else:
             st.write(data.head())
     with news_col:
-        result = search(selected_symbol + exchange, max_results = 3)
+        result = search(selected_symbol +' '+ exchange, max_results = 3)
         
         string_data = []
         for sublist in result:
             string_data.append('\n'.join(sublist))
         for string in result:
-            st.write(string)
+            st.markdown(string)
         
     # plot feature selection
     col_1, col_2, col_3, col_4 = st.columns(4)
