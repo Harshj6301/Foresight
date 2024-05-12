@@ -74,8 +74,20 @@ def main():
     # Fetch symbols from the URL and remove duplicates
     fno_symbols = list(fetch_symbols(url))
 
+    # Select Exchange
+    exchange = st.selectbox('Select Exchange', ['NSE', 'FWB', 'NASDAQ', 'NYSE','JPX','LSE','SSE','HKG'])
+    
     # Dropdown to select symbol
     selected_symbol = st.selectbox('Select Ticker', fno_symbols)
+
+    if exchange == 'NSE':
+        selected_symbol = f"{selected_symbol}.NS"
+    elif exchange == 'FWB':
+        selected_symbol = f"{selected_symbol}.DE"
+    elif exchange == 'JPX':
+        selected_symbol = f"{selected_symbol}.T"
+    elif exchange == 'HKG':
+        selected_symbol = f"{selected_symbol}.HK"
     
     st.write('Selected Ticker:', selected_symbol)
     ####################### 
@@ -96,7 +108,7 @@ def main():
     start_date_input = datetime.date(int(Year_s), int(Month_s), int(day_s))
     end_date_input = datetime.date(int(Year_e), int(Month_e), int(day_e))
 
-    data = download(selected_symbol+'.NS', start_date_input, end_date_input, interval_options)
+    data = download(selected_symbol, start_date_input, end_date_input, interval_options)
     # Add your download and plot functions here
     if st.checkbox("Show full data"):
         st.write(data)
