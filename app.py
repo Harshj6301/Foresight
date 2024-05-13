@@ -88,7 +88,7 @@ def main():
     # Select Exchange
     #exchange = st.selectbox('Select Exchange', ['NSE', 'FWB', 'NASDAQ', 'NYSE','JPX','LSE','SSE','HKG'], key='s1')
     exchange = st.radio('Select Exchange', ['NSE', 'FWB', 'NYSE', 'JPX', 'LSE', 'HKG'], 
-                        captions=['India', 'Germany', 'US', 'Japan', 'London', 'China'], index=0, horizontal=True)
+                        captions=['India', 'Germany', 'US', 'Japan', 'London', 'China'], horizontal=True)
     # Dropdown to select symbol
     # selected_symbol = st.selectbox('Select Ticker', fno_symbols, key='s2')
     
