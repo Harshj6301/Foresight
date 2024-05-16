@@ -118,14 +118,16 @@ def main():
     
     col1,col2 = st.columns(2)
     with col1:
-        st.subheader('Provide Start Date')
-        Year_s, Month_s, day_s = get_date_input_s(label='Start Date')
+       # st.subheader('Provide Start Date')
+       # Year_s, Month_s, day_s = get_date_input_s(label='Start Date')
+        start_date_input = st.date_input('Provide Start Date', value=None)
     with col2:
-        st.subheader('Provide End Date')
-        Year_e, Month_e, day_e = get_date_input_e(label='End Date')
+       # st.subheader('Provide End Date')
+       # Year_e, Month_e, day_e = get_date_input_e(label='End Date')
+        end_date_input = st.date_input('Provide End Date', datetime.now())
 
-    start_date_input = datetime.date(int(Year_s), int(Month_s), int(day_s))
-    end_date_input = datetime.date(int(Year_e), int(Month_e), int(day_e))
+    #start_date_input = datetime.date(int(Year_s), int(Month_s), int(day_s))
+    #end_date_input = datetime.date(int(Year_e), int(Month_e), int(day_e))
 
     data = download(selected_symbol, start_date_input, end_date_input, interval_options)
     # Add your download and plot functions here
