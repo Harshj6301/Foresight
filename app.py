@@ -112,8 +112,8 @@ def main():
         else:
             st.write(data.head())
     with news_col:
-        result = search(selected_symbol +' '+ exchange, max_results = 3)
-        
+        st.write('Headlines')
+        result = search(selected_symbol +' '+ exchange, max_results = 3) 
         for headline, description, source in result:
             st.markdown(headline)
             st.write(description)
