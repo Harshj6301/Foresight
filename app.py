@@ -55,7 +55,7 @@ def search_symbol_name(query, max_results):
     return result
 
 def format_date(date):
-    date_obj = datetime.strptime(date, "%Y-%m-%dT%H:%M:%S%z")
+    date_obj = datetime.datetime.strptime(date, "%Y-%m-%dT%H:%M:%S%z")
     formatted_date = date_obj.strftime("%b %d %Y")
     return formatted_date
 
