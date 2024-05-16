@@ -122,13 +122,13 @@ def main():
     # plot feature selection
     col_1, col_2, col_3, col_4 = st.columns(4)
     with col_1:
-        x_feature = st.selectbox("Select X Feature", data.columns, index=0)
+        x_feature = st.selectbox("Select X Feature", data.columns, index=0, key=1)
     with col_2:
-        y_feature = st.selectbox("Select Y Feature", data.columns, index=4)
+        y_feature = st.selectbox("Select Y Feature", data.columns, index=4, key=2)
     with col_3:
-        x1_feature = st.selectbox("Select X Feature", data.columns, index=0)
+        x1_feature = st.selectbox("Select X Feature", data.columns, index=0, key=3)
     with col_4:
-        y1_feature = st.selectbox("Select Y Feature", data.columns, index=6)
+        y1_feature = st.selectbox("Select Y Feature", data.columns, index=6, key=4)
    # line chart
     col_1, col_2 = st.columns(2)
     with col_1:
