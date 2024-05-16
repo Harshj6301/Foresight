@@ -107,7 +107,10 @@ def main():
         start_date_input = st.date_input('Provide Start Date', value=None)
     with col2:
         end_date_input = st.date_input('Provide End Date', datetime.datetime.now())
-        
+
+    # Divider line
+    st.write('---')
+    
     # Download data according to time frame
     data = download(selected_symbol, start_date_input, end_date_input, interval_options)
     # Add your download and plot functions here
