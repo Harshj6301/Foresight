@@ -112,13 +112,14 @@ def main():
         else:
             st.write(data.head())
     with news_col:
-        st.write('Headlines')
+        st.write(':orange[Headlines]')
         result = search(selected_symbol +' '+ exchange, max_results = 3) 
         for headline, description, source in result:
             st.markdown(headline)
             st.write(description)
             st.write(f"Source: {source}")
-        
+
+    st.write('---')
     # plot feature selection
     col_1, col_2, col_3, col_4 = st.columns(4)
     with col_1:
