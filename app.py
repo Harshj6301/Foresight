@@ -117,7 +117,7 @@ def main():
         for headline, description, source in result:
             st.markdown(headline)
             st.write(description)
-            st.write(f"Source: {source}")
+            st.caption(f"Source: {source}")
 
     st.write('---')
     # plot feature selection
