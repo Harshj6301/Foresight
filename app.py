@@ -45,7 +45,7 @@ def headlines(query, max_results):
   # stripping and processing data
   final_result = []
   for i in result:
-    final_result.append([i['title'], i['body'], i['source']])
+    final_result.append([i['title'], i['body'], i['source'], i['date']])
   return final_result
 
 def search_symbol_name(query, max_results):
