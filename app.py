@@ -133,7 +133,7 @@ def main():
         for headline, description, source, date in news:
             st.markdown(headline)
             st.write(description)
-            st.caption(f"Source: {source} \t {format_date(date))}")
+            st.caption(f"Source: {source} \t {format_date(date)} ")
 
     st.write('---')
     # plot feature selection
