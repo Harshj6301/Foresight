@@ -93,7 +93,7 @@ def main():
         selected_symbol = f"{selected_symbol}.HK"
 
     # Selected final ticker
-    result = search_symbol_name(selected_symbol +' '+ exchange, max_results = 1)
+    result = search_symbol_name(selected_symbol, max_results = 1)
     st.write('Selected Ticker:', result)
 
     ####################### 
