@@ -91,6 +91,10 @@ def main():
         selected_symbol = f"{selected_symbol}.T"
     elif exchange == 'HKG':
         selected_symbol = f"{selected_symbol}.HK"
+    elif exchange == 'LSE':
+        selected_symbol = f"{selected_symbol}.L"
+    elif exchange == 'NYSE':
+        selected_symbol = f"{selected_symbol}"
 
     # Selected final ticker
     result = search_symbol_name(selected_symbol, max_results = 1)
@@ -122,8 +126,8 @@ def main():
             st.write(data.head())
     with news_col:
         st.write(':orange[Headlines]')
-        result = headlines(selected_symbol +' '+ exchange, max_results = 3) 
-        for headline, description, source in result:
+        news = headlines(result, max_results = 3) 
+        for headline, description, source in news:
             st.markdown(headline)
             st.write(description)
             st.caption(f"Source: {source}")
