@@ -16,25 +16,8 @@ def download(ticker_symbol,start_date, end_date, interval='1m'):
     data = data.reset_index()
    # print(data.info())
     return data
-  
-# Function for date start input
-def get_date_input_s(label):
-    year = st.number_input(label='Year', min_value=2000, max_value=2100,value=2024, key='year_s')
-    month = st.number_input(label='Month', min_value=1, max_value=12, key='month_s')
-    day = st.number_input(label='Day', min_value=1, max_value=31, key='day_s')
-    return year, month, day
-# Function for date end input
-def get_date_input_e(label):
-    year = st.number_input(label='Year', min_value=2000, max_value=2100,value=2024, key='year')
-    month = st.number_input(label='Month', min_value=1, max_value=12, key='month')
-    day = st.number_input(label='Day', min_value=1, max_value=31, key='day')
-    return year, month, day
 
-
-# Function to plot features x by y
-def plot(var1, var2, data):    
-    st.line_chart(data, var1, var2)
-
+# Function to fetch symbols from yfinance library
 def fetch_symbols(url):
         symbols = []
         # Fetch HTML content from the URL
@@ -68,12 +51,13 @@ def search(query, max_results):
 # Main function
 def main():
     # Add your logo/image
-    logo = "Assets/Logos/bullai.png"
+    #logo = "Assets/Logos/bullai.png"
     name = "Assets/Name/Foresight.png"
     st.image(name, width=250)
    # st.title('Foresight')
     st.subheader('')
-    st.subheader('Gain the data-driven insights you need to make precise and agile decisions', divider='rainbow')
+    st.subheader('ML and analytics for options', divider='rainbow')
+    st.caption('Please switch to wide mode for better viewing experience')
 
     #########
     st.subheader('Provide Data')
@@ -86,11 +70,8 @@ def main():
     fno_symbols = list(fetch_symbols(url))
 
     # Select Exchange
-    #exchange = st.selectbox('Select Exchange', ['NSE', 'FWB', 'NASDAQ', 'NYSE','JPX','LSE','SSE','HKG'], key='s1')
     exchange = st.radio('Select Exchange', ['NSE', 'FWB', 'NYSE', 'JPX', 'LSE', 'HKG'], 
                         captions=['India', 'Germany', 'US', 'Japan', 'London', 'China'], horizontal=True)
-    # Dropdown to select symbol
-    # selected_symbol = st.selectbox('Select Ticker', fno_symbols, key='s2')
     
     # Other tickers
     selected_symbol = st.text_input("Enter Ticker symbol (For other tickers)")
@@ -110,25 +91,18 @@ def main():
 
     
     ####################### 
-
-  #  ticker_name_input = st.text_input("Enter Ticker symbol")
-    #interval_input = st.text_input("Enter interval")
+    # Interval options for data download
     interval_options = st.selectbox("Enter interval",
                                     ('1m','5m','15m','1h','1d','1wk'))
-    
+
+    # UI for selecting start and end date to download data
     col1,col2 = st.columns(2)
     with col1:
-       # st.subheader('Provide Start Date')
-       # Year_s, Month_s, day_s = get_date_input_s(label='Start Date')
         start_date_input = st.date_input('Provide Start Date', value=None)
     with col2:
-       # st.subheader('Provide End Date')
-       # Year_e, Month_e, day_e = get_date_input_e(label='End Date')
         end_date_input = st.date_input('Provide End Date', datetime.datetime.now())
-
-    #start_date_input = datetime.date(int(Year_s), int(Month_s), int(day_s))
-    #end_date_input = datetime.date(int(Year_e), int(Month_e), int(day_e))
-
+        
+    # Download data according to time frame
     data = download(selected_symbol, start_date_input, end_date_input, interval_options)
     # Add your download and plot functions here
     data_col, news_col = st.columns(2)
