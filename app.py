@@ -134,7 +134,7 @@ def main():
         for headline, description, source, date in news:
             st.markdown(headline)
             st.write(description)
-            col1, col2 = st.columns(2):
+            col1, col2 = st.columns(2)
             with col1:
                 st.caption(f"Source: {source}")
             with col2:
