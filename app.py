@@ -54,6 +54,12 @@ def search_symbol_name(query, max_results):
     result = tks_fn[0]['title'].replace('- Yahoo Finance','')
     return result
 
+def format_date(date):
+    n_date = date
+    date_obj = datetime.strptime(n_str, "%Y-%m-%dT%H:%M:%S%z")
+    formatted_date = date_obj.strftime("%b %d %Y")
+    return formatted_date
+
 # Main function
 def main():
     # Add your logo/image
@@ -93,8 +99,6 @@ def main():
         selected_symbol = f"{selected_symbol}.HK"
     elif exchange == 'LSE':
         selected_symbol = f"{selected_symbol}.L"
-    elif exchange == 'NYSE':
-        selected_symbol = f"{selected_symbol}"
 
     # Selected final ticker
     result = search_symbol_name(selected_symbol, max_results = 1)
@@ -127,10 +131,14 @@ def main():
     with news_col:
         st.write(':orange[Headlines]')
         news = headlines(result, max_results = 3) 
-        for headline, description, source in news:
+        for headline, description, source, date in news:
             st.markdown(headline)
             st.write(description)
-            st.caption(f"Source: {source}")
+            col1, col2 = st.columns(2):
+            with col1:
+                st.caption(f"Source: {source}")
+            with col2:
+                st.caption(format_date(date))
 
     st.write('---')
     # plot feature selection
