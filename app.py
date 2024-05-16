@@ -120,7 +120,8 @@ def main():
     
     # Download data according to time frame
     data = download(selected_symbol, start_date_input, end_date_input, interval_options)
-    # Add your download and plot functions here
+    
+    # Data frame of downloaded data and headlines for the ticker (top 3)
     data_col, news_col = st.columns(2)
     with data_col:
         if st.checkbox("Show full data"):
@@ -133,8 +134,13 @@ def main():
         for headline, description, source, date in news:
             st.markdown(headline)
             st.write(description)
-            st.caption(f"Source: {source}             {format_date(date)} ")
+            col1, col2 = st.columns(2)
+            with col1:
+                st.caption(f"Source: {source}")
+            with col2:
+                st.caption(format_date(date))
 
+    # Divider line
     st.write('---')
     # plot feature selection
     col_1, col_2, col_3, col_4 = st.columns(4)
