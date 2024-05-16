@@ -124,11 +124,11 @@ def main():
     with col_1:
         x_feature = st.selectbox("Select X Feature", data.columns, index=0)
     with col_2:
-        y_feature = st.selectbox("Select Y Feature", data.columns, index=1)
+        y_feature = st.selectbox("Select Y Feature", data.columns, index=4)
     with col_3:
-        x1_feature = st.selectbox("Select X Feature", data.columns, index=3)
+        x1_feature = st.selectbox("Select X Feature", data.columns, index=0)
     with col_4:
-        y1_feature = st.selectbox("Select Y Feature", data.columns, index=4)
+        y1_feature = st.selectbox("Select Y Feature", data.columns, index=6)
    # line chart
     col_1, col_2 = st.columns(2)
     with col_1:
