@@ -55,8 +55,7 @@ def search_symbol_name(query, max_results):
     return result
 
 def format_date(date):
-    n_date = date
-    date_obj = datetime.strptime(n_date, "%Y-%m-%dT%H:%M:%S%z")
+    date_obj = datetime.strptime(date, "%Y-%m-%dT%H:%M:%S%z")
     formatted_date = date_obj.strftime("%b %d %Y")
     return formatted_date
 
@@ -134,11 +133,7 @@ def main():
         for headline, description, source, date in news:
             st.markdown(headline)
             st.write(description)
-            col1, col2 = st.columns(2)
-            with col1:
-                st.caption(f"Source: {source}")
-            with col2:
-                st.caption(format_date(date))
+            st.caption(f"Source: {source} \t {format_date(date))}")
 
     st.write('---')
     # plot feature selection
