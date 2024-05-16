@@ -39,9 +39,9 @@ def fetch_symbols(url):
         return symbols
 
 # news from ddg
-def search(query, max_results):
+def search(type, query, max_results):
   ddg = DDGS()
-  result = ddg.news(query, max_results=max_results)
+  result = ddg.type(query, region='us-en', max_results=max_results)
   # stripping and processing data
   final_result = []
   for i in result:
@@ -87,7 +87,9 @@ def main():
         selected_symbol = f"{selected_symbol}.HK"
 
     # Selected final ticker
-    st.write('Selected Ticker:', selected_symbol)
+    tks_fn = search('text', selected_symbol +' '+ exchange, max_results = 1)
+    result = tks_fn[0]['title'].replace('- Yahoo Finance','')
+    st.write('Selected Ticker:', result)
 
     
     ####################### 
@@ -113,7 +115,7 @@ def main():
             st.write(data.head())
     with news_col:
         st.write(':orange[Headlines]')
-        result = search(selected_symbol +' '+ exchange, max_results = 3) 
+        result = search('news', selected_symbol +' '+ exchange, max_results = 3) 
         for headline, description, source in result:
             st.markdown(headline)
             st.write(description)
