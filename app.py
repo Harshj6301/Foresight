@@ -124,7 +124,7 @@ def main():
     with col2:
        # st.subheader('Provide End Date')
        # Year_e, Month_e, day_e = get_date_input_e(label='End Date')
-        end_date_input = st.date_input('Provide End Date', datetime.now())
+        end_date_input = st.date_input('Provide End Date', datetime.datetime.now())
 
     #start_date_input = datetime.date(int(Year_s), int(Month_s), int(day_s))
     #end_date_input = datetime.date(int(Year_e), int(Month_e), int(day_e))
