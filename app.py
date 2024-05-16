@@ -57,7 +57,7 @@ def main():
    # st.title('Foresight')
     st.subheader('')
     st.subheader('ML and analytics for options', divider='rainbow')
-    st.caption('Please switch to wide mode for better viewing experience')
+    st.caption('_Please switch to wide mode for better viewing experience_')
 
     #########
     st.subheader('Provide Data')
