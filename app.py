@@ -81,8 +81,8 @@ def main():
     fno_symbols = list(fetch_symbols(url))
 
     # Select Exchange
-    exchange = st.radio('Select Exchange', ['NSE', 'FWB', 'NYSE', 'JPX', 'LSE', 'HKG'], 
-                        captions=['India', 'Germany', 'US', 'Japan', 'London', 'China'], horizontal=True)
+    exchange = st.radio('Select Exchange', ['NSE', 'FWB', 'JPX', 'LSE', 'HKG'], 
+                        captions=['India', 'Germany', 'Japan', 'London', 'China'], horizontal=True)
     
     # Other tickers
     selected_symbol = st.text_input("Enter Ticker symbol (For other tickers)")
