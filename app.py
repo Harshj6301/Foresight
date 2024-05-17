@@ -81,23 +81,26 @@ def main():
     fno_symbols = list(fetch_symbols(url))
 
     # Select Exchange
-    exchange = st.radio('Select Exchange', ['NSE', 'FWB', 'JPX', 'LSE', 'HKG'], 
-                        captions=['India', 'Germany', 'Japan', 'London', 'China'], horizontal=True)
+    exchange = st.radio('Select Exchange', ['NSE', 'FWB', 'JPX', 'LSE', 'HKG', 'NYSE'], 
+                        captions=['India', 'Germany', 'Japan', 'London', 'China', 'US'], horizontal=True)
     
     # Other tickers
     selected_symbol = st.text_input("Enter Ticker symbol (For other tickers)")
 
-    if exchange == 'NSE':
-        selected_symbol = st.selectbox('Select Ticker', fno_symbols, key='s3')
-        selected_symbol = f"{selected_symbol}.NS"
-    elif exchange == 'FWB':
-        selected_symbol = f"{selected_symbol}.DE"
-    elif exchange == 'JPX':
-        selected_symbol = f"{selected_symbol}.T"
-    elif exchange == 'HKG':
-        selected_symbol = f"{selected_symbol}.HK"
-    elif exchange == 'LSE':
-        selected_symbol = f"{selected_symbol}.L"
+    try:
+        if exchange == 'NSE':
+            selected_symbol = st.selectbox('Select Ticker', fno_symbols, key='s3')
+            selected_symbol = f"{selected_symbol}.NS"
+        elif exchange == 'FWB':
+            selected_symbol = f"{selected_symbol}.DE"
+        elif exchange == 'JPX':
+            selected_symbol = f"{selected_symbol}.T"
+        elif exchange == 'HKG':
+            selected_symbol = f"{selected_symbol}.HK"
+        elif exchange == 'LSE':
+            selected_symbol = f"{selected_symbol}.L"
+    except:
+        pass
 
     # Selected final ticker
     result = search_symbol_name(selected_symbol, max_results = 1)
