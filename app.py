@@ -89,7 +89,6 @@ def main():
 
     try:
         if exchange == 'NSE':
-            selected_symbol = st.selectbox('Select Ticker', fno_symbols, key='s3')
             selected_symbol = f"{selected_symbol}.NS"
         elif exchange == 'FWB':
             selected_symbol = f"{selected_symbol}.DE"
