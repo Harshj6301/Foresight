@@ -63,6 +63,7 @@ def format_date(date):
 def main():
     # Add your logo/image
     #logo = "Assets/Logos/bullai.png"
+    st.set_page_config(layout='wide')
     name = "Assets/Name/Foresight.png"
     st.image(name, width=250)
    # st.title('Foresight')
